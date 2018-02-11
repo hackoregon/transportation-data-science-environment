@@ -15,5 +15,5 @@ You only need to do the above steps once.
 2. `cd transportation-data-science-environment; make sync_data_from_s3`.
 3. `cd transportation-data-science-environment/src/data/ridership`.
 4. Create the file `.env`. Define the variables `HOST_PORT` and `POSTGRES_PASSWORD`.
-5. `./run.bat`.
+5. `./run.bat`. When the database announces it's ready for connections, type `CTRL-C`.
 6. `cd transportation-data-science-environment; make sync_data_to_s3`.
