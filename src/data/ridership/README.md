@@ -1,13 +1,16 @@
 # Creating the Ridership database / backup
 
 ## Setup
-1. Clone this repo. `git clone --recurse-submodules git@github.com:hackoregon/transportation-data-science-environment`.
-2. `cd transportation-data-science-environment`.
-3. Create and activate a Python or Conda virtual environment and type `pip -r requirements.txt`.
-4. Configure your AWS S3 access. Place the `passenger_census.csv` file in `transportation-data-science-environment/data/raw/`. 
-5. `cd transportation-data-science-environment; make sync_data_to_s3`.
-6. `cd transportation-data-science-environment/src/data-science-pet-containers/containers`.
-7. `docker-compose build` to make the Docker images. This takes some time; it creates about 5.3 gigabytes of Docker images.
+1. You'll need `conda`.
+2. Clone this repo. `git clone --recurse-submodules git@github.com:hackoregon/transportation-data-science-environment`.
+3. `cd transportation-data-science-environment`.
+4. `make create_environment`. This will create a Conda environment named `transportation-data-science-environment`.
+5. `source activate transportation-data-science-environment`.
+6. `make requirements`.
+7. Configure your AWS S3 access. Place the `passenger_census.csv` file in `transportation-data-science-environment/data/raw/`. 
+8. Set the environment variables BUCKET and PROFILE to your AWS S3 bucket and profile names. Then `cd transportation-data-science-environment; make sync_data_to_s3`.
+9. `cd transportation-data-science-environment/src/data-science-pet-containers/containers`.
+10. `docker-compose build` to make the Docker images. This takes some time; it creates about 5.3 gigabytes of Docker images.
 
 You only need to do the above steps once.
 
