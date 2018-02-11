@@ -8,6 +8,6 @@ services:
       - $HOST_PORT:5432
     volumes:
       - ../../../data/raw/:/raw
-      - ../../../data/interim/:/interim
+      #- ../../../data/interim/:/interim
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - ./postgres:/home/postgres
