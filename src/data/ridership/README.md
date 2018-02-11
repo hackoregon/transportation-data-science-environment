@@ -19,3 +19,6 @@ You only need to do the above steps once.
 5. `./run.bat`. The `passenger_census` service will start up, load the data into a database and create a backup file. When the database announces it is ready to accept connections, type `CTRL-C`.
 6. `run.bat` will copy the database backup from the container - `ridership_passenger_census_1:/interim/passenger_census.backup` - to `transportation-data-science-environment/data/interim/`.
 6. `cd transportation-data-science-environment; make sync_data_to_s3`.
+
+## Using the service
+When you typed `CTRL-C` above, Docker stopped the `ridership_passenger_census_1` container so `run.bat` could copy the backup file out. But the container is still there, and its filesystem has the database loaded! Just type `docker-compose up -d` and Docker will restart the `ridership_passenger_census_1` container with the `passenger_census` service. You can connect to the service as `postgres` with password POSTGRES_PASSWORD on `localhost`, port HOST_PORT.
