@@ -1,0 +1,3 @@
+[submodule "src/data-science-pet-containers"]
+	path = src/data-science-pet-containers
+	url = git@github.com:hackoregon/data-science-pet-containers
