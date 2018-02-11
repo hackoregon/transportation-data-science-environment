@@ -5,7 +5,7 @@
 #################################################################################
 
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-BUCKET = znmeb-home
+BUCKET = <put your S3 bucket name here>
 PROFILE = default
 PROJECT_NAME = transportation-data-science-environment
 PYTHON_INTERPRETER = python3
